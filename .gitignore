@@ -1,6 +1,8 @@
 Cakefile
 nbproject
-vendor
+vendor/*
+!vendor/jquery
+vendor/jquery/*
 lib-cov
 *.seed
 *.log
@@ -14,7 +16,5 @@ logs
 results
 npm-debug.log
 node_modules
-
-
-
 !.slumpslider
+!vendor/jquery/jquery.min.js
