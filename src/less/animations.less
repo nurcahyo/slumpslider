@@ -1,7 +1,6 @@
-//-- HOVER INDICATORS EFFECT --
+//** HOVER INDICATORS EFFECT **//
+
 //on hover
-
-
 &:hover,:focus, &[data-slums-touched="1"]{
   & .slumps-indicators{
     .hoverIn()
@@ -16,3 +15,21 @@
 &-inner{
 
 }
+
+//** Loading animation keyframe**//
+
+@-webkit-keyframes stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+

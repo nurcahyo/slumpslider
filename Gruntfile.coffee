@@ -39,17 +39,14 @@ module.exports = (grunt) ->
 
     # Less compiler
     less:
-      development:
+      normal:
         options:
             outputSourceFiles: true
         files:
           "dist/css/<%= pkg.name %>.css": "src/less/<%= pkg.name %>.less"
-      production:
+      min:
         options:
-          cleancss:true
           compress: true
-          yuicompress: true
-          optimization: 2
         files:
           "dist/css/<%= pkg.name %>.min.css": "src/less/<%= pkg.name %>.less"
     # Coffee compiler

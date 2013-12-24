@@ -108,13 +108,24 @@
     };
 
     Slumpslider.prototype.loading = function() {
+      var $loading;
+      $loading = $('<div class="loading">\n\
+  <div class="spinner">\n\
+    <div class="react1"></div>\n\
+    <div class="react2"></div>\n\
+    <div class="react3"></div>\n\
+    <div class="react4"></div>\n\
+    <div class="react5"></div>\n\
+  </div>\n\
+</div>').appendTo(this.$context);
       this.$indicators.hide();
       return this.stop(true);
     };
 
     Slumpslider.prototype.loaded = function() {
       this.isLoaded = 1;
-      this.$indicators.show('fade');
+      this.$context.find('.loading').remove();
+      this.$indicators.show();
       return this.play();
     };
 

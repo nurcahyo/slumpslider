@@ -83,12 +83,22 @@ class Slumpslider
     return @_slump((if position < activePosition then 'left' else 'right'), $(@$items[position]))
   
   loading: ()->
+    $loading=$('<div class="loading">\n
+  <div class="spinner">\n
+    <div class="react1"></div>\n
+    <div class="react2"></div>\n
+    <div class="react3"></div>\n
+    <div class="react4"></div>\n
+    <div class="react5"></div>\n
+  </div>\n
+</div>').appendTo(@$context)
     @$indicators.hide()
     @stop(true)
   
   loaded: ()->
     @isLoaded=1
-    @$indicators.show('fade')
+    @$context.find('.loading').remove()
+    @$indicators.show()
     @play()
     
   __decorate__:()->

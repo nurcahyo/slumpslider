@@ -154,88 +154,65 @@
   -webkit-background-clip: @argument;
   background-clip: @argument;
 }
-/*---------------------------
 
-Icon fonts mixins
-
-----------------------------*/
-
-@font-face {
-	font-family: 'slumpslider';
-	src:url('@{icon-font-path}/@{icon-font-name}.eot');
-	src:url('{icon-font-path}/@{icon-font-name}.eot?#iefix') format('embedded-opentype'),
-		url('{icon-font-path}/@{icon-font-name}.ttf') format('truetype'),
-		url('{icon-font-path}/@{icon-font-name}.woff') format('woff'),
-		url('{icon-font-path}/@{icon-font-name}.svg#slumpslider') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-
-.registerfonts(@size:48px){
+//** ICONFOT MIXINS **//
+.registerfonts(){
 	font-family: 'slumpslider';
 	speak: none;
-    font-size: @size;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-    
-	/* Better Font Rendering =========== */
+    //betterfonts rendering
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-loading2(@size: 48px){
+.icon-loading2(){
   &:before {
-      .registerfonts(@size);
+      .registerfonts();
       content: "\edd2";
   }
 }
-.icon-fastleft(@size: 48px){
+.icon-fastleft(){
   &:before {
-    .registerfonts(@size);
+    .registerfonts();
 	content: "\edb3";
   }
 }
-.icon-fastright(@size: 48px){
+.icon-fastright(){
   &:before {
-    .registerfonts(@size);
+    .registerfonts();
 	content: "\edb4";
   }
 }
-.icon-left(@size: 48px){
+.icon-left(){
   &:before {
-    .registerfonts(@size);
+    .registerfonts();
 	content: "\e99d";
   }
 }
-.icon-right(@size: 48px){
+.icon-right(){
   &:before {
-    .registerfonts(@size);
+    .registerfonts();
 	content: "\e99c";
   }
 }
-.icon-spinner(@size: 48px){
+.icon-spinner(){
   &:before {
-    .registerfonts(@size);
+    .registerfonts();
 	content: "\e607";
   }
 }
-.icon-spinner2(@size: 48px){
+.icon-spinner2(){
   &:before {
-    .registerfonts(@size);
+    .registerfonts();
 	content: "\e608";
   }
 }
 
-/*---------------------------
-
-Animation 
-
-----------------------------*/
-
+//*** ANIMATION ***/
 .hoverIn(){
   opacity: 1;
   .transition(@control-transition-in-time, ease-out);
