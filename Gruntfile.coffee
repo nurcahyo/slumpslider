@@ -28,6 +28,15 @@ module.exports = (grunt) ->
         files: 
           'dist/css/<%= pkg.name %>.css':['dist/css/<%= pkg.name %>.css']
           'dist/css/<%= pkg.name %>.min.css':['dist/css/<%= pkg.name %>.min.css']
+    ##uglify js minifier
+    uglify:
+      options:
+        compress: true
+        preserveComments: "all"
+      lib:
+        files:
+          'dist/js/<%= pkg.name %>.min.js': ['dist/js/<%= pkg.name %>.js']
+
     # Less compiler
     less:
       development:
@@ -45,7 +54,7 @@ module.exports = (grunt) ->
           "dist/css/<%= pkg.name %>.min.css": "src/less/<%= pkg.name %>.less"
     # Coffee compiler
     coffee:
-      app:
+      lib:
         options:
           bare: false
           join: true
@@ -55,19 +64,19 @@ module.exports = (grunt) ->
         ext: '.js'
     # watcher
     watch:
-      app:
+      lib:
         files: ['src/**/*.coffee']
-        tasks: ['coffee','concat:js']
+        tasks: ['coffee','concat:js','uglify:lib']
       style:
         files: ["src/**/*.less"]
         tasks: ['less','concat:css']
 
   # These plugins provide necessary tasks.
   grunt.loadNpmTasks 'grunt-contrib-concat'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-watch'
-
   
   # Default task.
   grunt.registerTask 'default', ['coffee']
