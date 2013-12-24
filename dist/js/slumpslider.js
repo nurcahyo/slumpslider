@@ -30,7 +30,7 @@
     Slumpslider.prototype.position = 0;
 
     Slumpslider.prototype.options = {
-      interval: 9000,
+      interval: 3000,
       pause: 'hover',
       autoRepeat: true
     };
@@ -172,7 +172,7 @@
         $active = $(context.getElementsByClassName('item'));
       }
       $this.$active = $active.addClass('sliding');
-      $this.$items = $this.$active.parent().children();
+      $this.$items = $this.$active.parent().children('.item');
       $this.position = $this.$items.index($this.$active);
       $this.$context.data('slumps.obj', $this);
       $this.__decorate__();

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="../dist/css/slumpslider.css">
+    <script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>
+    <style>
+      .slumps-indicators li.active {
+        background-color: #FF3A3A;
+      }
+      .slumps-indicators li {
+        border: 1px solid #FF0000;
+      }
+      .slumps-indicators li:hover {
+        border: 1px solid #FF0000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="home-slider" class="slumps hero">
+      <!-- Indicators -->
+      <ol class="slumps-indicators">
+        <li data-target="#home-slider" data-slumps-for="0" class="active"></li>
+        <li data-target="#home-slider" data-slumps-for="1"></li>
+        <li data-target="#home-slider" data-slumps-for="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="slumps-inner">
+        <img class="slumps-bg" src="assets/img/bg.jpg">
+        <!-- Wrapper for slide1 layers object -->
+        <div class="item active" data-slumps-interval="2000">
+          <!-- background type layer object -->
+          <div class="slumps-object" data-slumps-object="background" data-src="assets/img/1.jpg" data-alt="drink 1" data-slumps-effect=""></div>
+        </div>
+        <!-- Wrapper for slide2 layers object -->
+        <div class="item" data-slumps-interval="2000">
+          <!-- background type layer object -->
+          <div class="slumps-object" data-slumps-object="background" data-src="assets/img/2.jpg" data-alt="drink 2" data-slumps-effect=""></div>
+        </div>
+        <!-- Wrapper for slide3 layers object -->
+        <div class="item" data-slumps-interval="2000">
+          <!-- background type layer object -->
+          <div class="slumps-object" data-slumps-object="background" data-src="assets/img/3.jpg" data-alt="drink 3" data-slumps-effect=""></div>
+        </div>
+
+        <!-- Wrapper for slide4 layers object -->
+        <div class="item" data-slumps-interval="2000">
+          <!-- background type layer object -->
+          <div class="slumps-object" data-slumps-object="background" data-src="assets/img/4.jpg" data-alt="drink 4" data-slumps-effect=""></div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left slumps-control" href="#home-slider" data-slide="prev">
+        <span class="icon-prev"></span>
+      </a>
+      <a class="right slumps-control" href="#home-slider" data-slide="next">
+        <span class="icon-next"></span>
+      </a>
+    </div>
+    <script type="text/javascript" src="../dist/js/slumpslider.js"></script>
+  </body>
+</html>

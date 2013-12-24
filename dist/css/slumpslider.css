@@ -57,6 +57,12 @@ Animation
 .slumps-inner {
   position: relative;
 }
+.slumps-inner .slumps-bg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
 .slumps-inner .slumps-background {
   width: 100%;
 }
