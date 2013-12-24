@@ -173,7 +173,8 @@ jQuery.fn.slumpslider= (options)->
     slider=$this.data('slumps.obj')
     unless slider instanceof Slumpslider
       slider= new Slumpslider(@,options)
-    else jQuery.extend slider.options,options
+    else if options.interval
+      jQuery.extend slider.options,options
     if actionName
       slider[actionName]()
     else if slider.options.interval

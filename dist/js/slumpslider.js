@@ -227,7 +227,7 @@
       slider = $this.data('slumps.obj');
       if (!(slider instanceof Slumpslider)) {
         slider = new Slumpslider(this, options);
-      } else {
+      } else if (options.interval) {
         jQuery.extend(slider.options, options);
       }
       if (actionName) {
