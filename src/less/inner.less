@@ -1,0 +1,15 @@
+&-inner{
+  position: relative;
+  .slumps-background{
+    width: 100%;
+  }
+ & > .item{
+    position: absolute;
+    top: 0;
+    z-index: @base-z-index;
+    &.active{
+      position: relative;
+      z-index: @base-z-index+2;
+    }
+  }
+}

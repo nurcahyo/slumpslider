@@ -1,0 +1,25 @@
+{
+  "name": "slumpslider",
+  "version": "0.0.1-a",
+  "authors": [
+    "nurcahyo <2light.hidayah@gmail.com>"
+  ],
+  "description": "Interactive slider",
+  "keywords": [],
+  "main": [
+    "./dist/js/slumpslider.js",
+    "./dist/css/slumpslider.css"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor",
+    "test",
+    "tests",
+    "Cakefile"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3"
+  }
+}
