@@ -86,7 +86,7 @@ class Slumpslider
     @$indicators.hide()
     @stop(true)
   
-  endLoading: ()->
+  loaded: ()->
     @isLoaded=1
     @$indicators.show('fade')
     @play()
@@ -115,7 +115,7 @@ class Slumpslider
               image.onload=()->
                 isLoading--
                 if isLoading is 0
-                  that.endLoading()
+                  that.loaded()
               image.src= if data.src then data.src else ''
               image.classList.add('slumps-background')
               $object.replaceWith(image)

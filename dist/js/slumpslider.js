@@ -109,7 +109,7 @@
       return this.stop(true);
     };
 
-    Slumpslider.prototype.endLoading = function() {
+    Slumpslider.prototype.loaded = function() {
       this.isLoaded = 1;
       this.$indicators.show('fade');
       return this.play();
@@ -143,7 +143,7 @@
                 image.onload = function() {
                   isLoading--;
                   if (isLoading === 0) {
-                    return that.endLoading();
+                    return that.loaded();
                   }
                 };
                 image.src = data.src ? data.src : '';
