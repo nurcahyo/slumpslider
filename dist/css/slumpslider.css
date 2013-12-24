@@ -5,6 +5,18 @@
 */
 /*---------------------------
 
+Icon fonts mixins
+
+----------------------------*/
+@font-face {
+  font-family: 'slumpslider';
+  src: url('../fonts/slumpslider.eot');
+  src: url('{icon-font-path}/slumpslider.eot?#iefix') format('embedded-opentype'), url('{icon-font-path}/slumpslider.ttf') format('truetype'), url('{icon-font-path}/slumpslider.woff') format('woff'), url('{icon-font-path}/slumpslider.svg#slumpslider') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*---------------------------
+
 Animation 
 
 ----------------------------*/
