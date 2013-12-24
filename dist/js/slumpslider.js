@@ -68,12 +68,15 @@
     };
 
     Slumpslider.prototype._slump = function(direction, context) {
-      var e, isSlump;
+      var e, isSlump, slideInterval;
       if (this.isSliding) {
         return;
       }
       this.isSliding = true;
       isSlump = this.interval;
+      if ((slideInterval = context.attr("data-slumps-interval"))) {
+        this.options.interval = slideInterval;
+      }
       if (!context.hasClass('sliding')) {
         this.$active.removeClass('active sliding');
         this.$active = context;
@@ -130,9 +133,9 @@
           var isLoading;
           isLoading = 0;
           return that.$items.each(function() {
-            var $items;
-            $items = $(this);
-            return $items.find('.slumps-object').each(function() {
+            var $item;
+            $item = $(this);
+            return $item.find('.slumps-object').each(function() {
               var $object, data, image;
               $object = $(this);
               data = $object.data();

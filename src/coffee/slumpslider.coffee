@@ -53,7 +53,7 @@ class Slumpslider
     return if @isSliding
     @isSliding= true
     isSlump = @interval
-    
+    @options.interval=slideInterval if (slideInterval=context.attr("data-slumps-interval"))
     unless context.hasClass('sliding')
       @$active.removeClass('active sliding')
       @$active=context
@@ -104,8 +104,8 @@ class Slumpslider
       (that)->
         isLoading= 0
         that.$items.each ()->
-          $items=$(this)
-          $items.find('.slumps-object').each ()->
+          $item=$(this)
+          $item.find('.slumps-object').each ()->
             $object=$(this)
             data=$object.data()
             if data.slumpsObject is 'background'
