@@ -1,6 +1,7 @@
 //** Loading screen spinner**//
 .loading{
-  #gradient.bw-gradient(@gray-darker,0,10);
+  .lightenOrDarken(@control-color,10%);
+  #gradient.gradient(@control-color,average(@control-color,@returnLightenOrDarken),@returnLightenOrDarken);
   position: absolute;
   top: 0;
   height: 100%;
@@ -18,7 +19,15 @@
   bottom: 50%;
   margin-left: -30%;
   & > div {
-    background-color: #333;
+    .returnLightness(@color) when (lightness(@color) > 0 ){
+          @returnLightness: lightness(@color);
+    }
+    .returnLightness(@color) when (lightness(@color) = 0 ){
+          @returnLightness: 100;
+    }
+    .returnLightness(@control-color);
+    .lightenOrDarken(@control-color,@returnLightness / 2%);
+    background-color: @returnLightenOrDarken;
     height: 100%;
     width: 6px;
     display: inline-block;

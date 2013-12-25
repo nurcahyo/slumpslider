@@ -29,12 +29,12 @@
   }
 }
 .slumps .loading {
-  background: #222222;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #000000), color-stop(1, #0a0a0a));
-  background: -ms-linear-gradient(bottom, #000000 0%, #0a0a0a 100%);
-  background: -moz-linear-gradient(center bottom, #000000 0%, #0a0a0a 100%);
-  background: -o-linear-gradient(#0a0a0a, #000000);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0a0a0a', endColorstr='#000000', GradientType=0);
+  background: #444687;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4d4f98), color-stop(1, #5558a9));
+  background: -ms-linear-gradient(bottom, #4d4f98, #5558a9);
+  background: -moz-linear-gradient(center bottom, #4d4f98 0%, #5558a9 100%);
+  background: -o-linear-gradient(#5558a9, #4d4f98);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5558a9', endColorstr='#4d4f98', GradientType=0);
   position: absolute;
   top: 0;
   height: 100%;
@@ -52,7 +52,7 @@
   margin-left: -30%;
 }
 .slumps .spinner > div {
-  background-color: #333;
+  background-color: #7779ba;
   height: 100%;
   width: 6px;
   display: inline-block;
@@ -112,19 +112,19 @@
   margin: 1px;
   text-indent: -999px;
   cursor: pointer;
-  border: 1px solid #0d0d0d;
+  border: 1px solid #4d4f98;
   border-radius: 10px;
 }
 .slumps-indicators li.active {
   width: 12px;
   height: 12px;
   margin: 0;
-  background: #000000;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0d0d0d), color-stop(1, #1a1a1a));
-  background: -ms-linear-gradient(bottom, #0d0d0d, #1a1a1a);
-  background: -moz-linear-gradient(center bottom, #0d0d0d 0%, #1a1a1a 100%);
-  background: -o-linear-gradient(#1a1a1a, #0d0d0d);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a1a1a', endColorstr='#0d0d0d', GradientType=0);
+  background: #444687;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4d4f98), color-stop(1, #5558a9));
+  background: -ms-linear-gradient(bottom, #4d4f98, #5558a9);
+  background: -moz-linear-gradient(center bottom, #4d4f98 0%, #5558a9 100%);
+  background: -o-linear-gradient(#5558a9, #4d4f98);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5558a9', endColorstr='#4d4f98', GradientType=0);
 }
 .slumps .slumps-control {
   display: block;
@@ -208,7 +208,7 @@
 }
 .slumps .slumps-control a {
   text-decoration: none;
-  color: #454545;
+  color: #8e90c6;
   font-size: 16px;
   position: relative;
   top: 40%;
@@ -216,12 +216,12 @@
   text-align: center;
 }
 .slumps .slumps-control a {
-  background: #000000;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0d0d0d), color-stop(1, #1a1a1a));
-  background: -ms-linear-gradient(bottom, #0d0d0d, #1a1a1a);
-  background: -moz-linear-gradient(center bottom, #0d0d0d 0%, #1a1a1a 100%);
-  background: -o-linear-gradient(#1a1a1a, #0d0d0d);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a1a1a', endColorstr='#0d0d0d', GradientType=0);
+  background: #444687;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4d4f98), color-stop(1, #5558a9));
+  background: -ms-linear-gradient(bottom, #4d4f98, #5558a9);
+  background: -moz-linear-gradient(center bottom, #4d4f98 0%, #5558a9 100%);
+  background: -o-linear-gradient(#5558a9, #4d4f98);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5558a9', endColorstr='#4d4f98', GradientType=0);
 }
 .slumps .slumps-control i.slumps-prev:before {
   font-family: 'slumpslider';
@@ -287,12 +287,12 @@
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
-  background: #000000;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0d0d0d), color-stop(1, #1a1a1a));
-  background: -ms-linear-gradient(bottom, #0d0d0d, #1a1a1a);
-  background: -moz-linear-gradient(center bottom, #0d0d0d 0%, #1a1a1a 100%);
-  background: -o-linear-gradient(#1a1a1a, #0d0d0d);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a1a1a', endColorstr='#0d0d0d', GradientType=0);
+  background: #444687;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4d4f98), color-stop(1, #5558a9));
+  background: -ms-linear-gradient(bottom, #4d4f98, #5558a9);
+  background: -moz-linear-gradient(center bottom, #4d4f98 0%, #5558a9 100%);
+  background: -o-linear-gradient(#5558a9, #4d4f98);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5558a9', endColorstr='#4d4f98', GradientType=0);
 }
 /**
 Slumpslider Icon Font
