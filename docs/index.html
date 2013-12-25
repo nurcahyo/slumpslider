@@ -5,17 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link type="text/css" rel="stylesheet" href="../dist/css/slumpslider.css">
     <script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>
-    <style>
-      .slumps-indicators li.active {
-        background-color: #FF3A3A;
-      }
-      .slumps-indicators li {
-        border: 1px solid #FF0000;
-      }
-      .slumps-indicators li:hover {
-        border: 1px solid #FF0000;
-      }
-    </style>
   </head>
   <body>
     <div id="home-slider" class="slumps hero">
@@ -51,14 +40,17 @@
           <div class="slumps-object" data-slumps-object="background" data-src="assets/img/4.jpg" data-alt="drink 4" data-slumps-effect=""></div>
         </div>
       </div>
-
       <!-- Controls -->
-      <a class="left slumps-control" href="#home-slider" data-slide="prev">
-        <span class="icon-prev"></span>
-      </a>
-      <a class="right slumps-control" href="#home-slider" data-slide="next">
-        <span class="icon-next"></span>
-      </a>
+      <div class="slumps-control prev">
+        <a href="#home-slider" data-slumps-for="prev">
+          <i class="slumps-prev"></i>
+        </a>
+      </div>
+      <div class="slumps-control next">
+        <a href="#home-slider" data-slumps-for="next">
+          <i class="slumps-next"></i>
+        </a>
+      </div>
     </div>
     <script type="text/javascript" src="../dist/js/slumpslider.js"></script>
   </body>

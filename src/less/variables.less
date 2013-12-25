@@ -12,7 +12,7 @@
 @base-z-index:                      10;
 
 @control-text-color:                #000;
-@control-color:                      #fff;
+@control-color:                      #000;
 @control-width:                      15%;
 @control-opacity:                    .5;
 @control-font-size:                  20px;
@@ -27,3 +27,35 @@
 
 @icon-font-name:                    'slumpslider';
 @icon-font-path:                    '../fonts';
+
+
+//media query variable
+// Extra small screen / phone
+@screen-xs:                  480px;
+@screen-phone:               @screen-xs;
+
+// Small screen / tablet
+@screen-sm:                  768px;
+@screen-tablet:              @screen-sm;
+
+// Medium screen / desktop
+@screen-md:                  992px;
+@screen-desktop:             @screen-md;
+
+// Large screen / wide desktop
+@screen-lg:                  1200px;
+@screen-lg-desktop:          @screen-lg;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm - 1);
+@screen-sm-max:              (@screen-md - 1);
+@screen-md-max:              (@screen-lg - 1);
+
+
+
+@large-desktop: ~'only screen and (min-width: @{screen-lg-desktop})';
+@desktop:   ~'only screen and (min-width: @{screen-desktop}) and (max-width: @{screen-md-max})';
+@tablet:    ~'only screen and (min-width: @{screen-tablet}) and (max-width: @{screen-sm-max})';
+@phone:    ~'only screen and (max-width: @{screen-xs-max})';
+
+

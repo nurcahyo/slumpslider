@@ -37,15 +37,16 @@ class Slumpslider
   
   #to next slide
   next: ()->
-    context= @$active.next()
+    context= @$active.next('.item')
     position= if context.length then @position+1 else 0
     @_to(position)
     
   #to previous slide
   prev: ()->
     return if @isSliding
-    context= @$active.prev()
-    position= if context.length then @position-1 else @$items.length - 1
+    context= @$active.prev('.item')
+    console.log context.length
+    position= if context.length then @position-1 else (@$items.length-1)
     @_to(position)  
     
   
@@ -159,11 +160,13 @@ class Slumpslider
       $this=$(this)
       options={}
       $target=$ $this.attr("data-target") or (href = $this.attr("href")) and href.replace(/.*(?=#[^\s]+$)/, "")
-      sliderIndex=$this.attr('data-slumps-for')
-      options.interval= false if sliderIndex
+      sliderAction=$this.attr('data-slumps-for')
+      options.interval= false if sliderAction
+      index=parseInt(sliderAction)
       $target.slumpslider(options)
-      $target.data('slumps.obj')._to(parseInt(sliderIndex))
-      
+      if index >= 0 then $target.data('slumps.obj')._to(index) else $target.data('slumps.obj')[sliderAction]()
+      return
+   
   @animateIndicator: ($indicators,position)->
     if $indicators.length
       actives=$indicators[0].getElementsByClassName('active')
@@ -176,7 +179,6 @@ class Slumpslider
       
 jQuery.fn.slumpslider= (options)->
   actionName= (if typeof options is "string" then options else false)
-  throw("Can't access private method") if actionName[0] is "_"
   options=(if typeof options is "object" then options else {})
   this.each ()->
     $this=$(this)
@@ -186,6 +188,7 @@ jQuery.fn.slumpslider= (options)->
     else if options.interval
       jQuery.extend slider.options,options
     if actionName
+      throw("Can't access private method") if actionName[0] is "_"
       slider[actionName]()
     else if slider.options.interval
       slider.stop().play()

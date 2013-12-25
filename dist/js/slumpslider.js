@@ -52,7 +52,7 @@
 
     Slumpslider.prototype.next = function() {
       var context, position;
-      context = this.$active.next();
+      context = this.$active.next('.item');
       position = context.length ? this.position + 1 : 0;
       return this._to(position);
     };
@@ -62,7 +62,8 @@
       if (this.isSliding) {
         return;
       }
-      context = this.$active.prev();
+      context = this.$active.prev('.item');
+      console.log(context.length);
       position = context.length ? this.position - 1 : this.$items.length - 1;
       return this._to(position);
     };
@@ -195,17 +196,22 @@
 
     Slumpslider.registerEvents = function(context) {
       return jQuery(context).on('click.slumps.obj.data-api', '[data-slumps-for]', function(e) {
-        var $target, $this, href, options, sliderIndex;
+        var $target, $this, href, index, options, sliderAction;
         e.preventDefault();
         $this = $(this);
         options = {};
         $target = $($this.attr("data-target") || (href = $this.attr("href")) && href.replace(/.*(?=#[^\s]+$)/, ""));
-        sliderIndex = $this.attr('data-slumps-for');
-        if (sliderIndex) {
+        sliderAction = $this.attr('data-slumps-for');
+        if (sliderAction) {
           options.interval = false;
         }
+        index = parseInt(sliderAction);
         $target.slumpslider(options);
-        return $target.data('slumps.obj')._to(parseInt(sliderIndex));
+        if (index >= 0) {
+          $target.data('slumps.obj')._to(index);
+        } else {
+          $target.data('slumps.obj')[sliderAction]();
+        }
       });
     };
 
@@ -231,9 +237,6 @@
   jQuery.fn.slumpslider = function(options) {
     var actionName;
     actionName = (typeof options === "string" ? options : false);
-    if (actionName[0] === "_") {
-      throw "Can't access private method";
-    }
     options = (typeof options === "object" ? options : {});
     return this.each(function() {
       var $this, slider;
@@ -245,6 +248,9 @@
         jQuery.extend(slider.options, options);
       }
       if (actionName) {
+        if (actionName[0] === "_") {
+          throw "Can't access private method";
+        }
         slider[actionName]();
       } else if (slider.options.interval) {
         slider.stop().play();

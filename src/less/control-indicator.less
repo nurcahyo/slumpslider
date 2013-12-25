@@ -13,13 +13,16 @@
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
-    border: 1px solid @control-color;
+    .lightenOrDarken(@control-color,10%);
+    border: 1px solid average(@control-color,@returnLightenOrDarken);
     border-radius: 10px;
     &.active{
       width: 12px;
       height: 12px;
       margin: 0;
-      background-color: @control-color;
+      .lightenOrDarken(@control-color,10%);
+      #gradient.gradient(@control-color,average(@control-color,@returnLightenOrDarken),@returnLightenOrDarken);
+
     }
   }
 
@@ -31,37 +34,58 @@
   width: 10%;
   bottom: 0px;
   //prev icon
-  &[data-slumps="prev"]{
+  &.prev{
     left: 0px;
     right: auto;
     a{
       float: left;
+      @media @phone {
+        padding: 6px 6px 6px 3px;
+        font-size: 12px;
+        margin-top: -5px;
+      }
+      @media @tablet {
+        padding: 12px 12px 12px 3px;
+        font-size: 12px;
+        margin-top: -5px;
+      }
       padding: 20px 20px 20px 10px;
       .border-radius(50px, 50px, 0, 0);
     }
   }
   //next icon
-  &[data-slumps="next"]{
+  &.next{
     left: auto;
     right: 0px;
     a{
       float: right;
+      @media @phone {
+        padding: 6px 3px 6px 6px;
+        font-size: 12px;
+        margin-top: -5px;
+      }
+      @media @tablet {
+        padding: 12px 6px 12px 12px;
+        font-size: 13px;
+        margin-top: -5px;
+      }
       padding: 20px 10px 20px 20px;
       .border-radius(0, 0, 50px, 50px);
-    }
   }
-
+}
   a{
     text-decoration: none;
-    background: @control-color;
-    color: @control-text-color;
+    .lightenOrDarken(@control-color,27%);
+    color: @returnLightenOrDarken;
     font-size: 16px;
     position: relative;
-    top: 50%;
+    top: 40%;
     margin-top: -20px;
-    margin-bottom: -20px;
     text-align: center;
-
+    &{
+      .lightenOrDarken(@control-color,10%);
+      #gradient.gradient(@control-color,average(@control-color,@returnLightenOrDarken),@returnLightenOrDarken);
+    }
   }
   i{
     &.slumps-prev{
@@ -77,4 +101,34 @@
 &-indicators, .slumps-control{
     position: absolute;
     z-index: @base-z-index+5;
+}
+//** HOVER INDICATORS EFFECT **//
+
+//on hover
+&:hover,&:focus, &[data-slums-touched="1"]{
+  & .slumps-indicators  li, .slumps-control a{
+    .hover(.5,0,@control-transition-in-time);
+  }
+}
+
+//on out hover
+&-indicators li, .slumps-control a{
+  .hover(0,.5,@control-transition-out-time);
+}
+
+.slumps-control a{
+  &:hover, &:focus{
+      .hover(1,0,@control-transition-in-time);
+  }
+}
+.slumps-indicators > li{
+  &:hover, &:focus{
+    .hover(1,0,@control-transition-in-time);
+    .lightenOrDarken(@control-color,10%);
+     #gradient.gradient(@control-color,average(@control-color,@returnLightenOrDarken),@returnLightenOrDarken);
+  }
+}
+
+&-inner{
+
 }

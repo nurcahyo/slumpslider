@@ -6,22 +6,6 @@
 .slumps {
   position: relative;
 }
-.slumps:hover .slumps-indicators,
-.slumps :focus .slumps-indicators,
-.slumps[data-slums-touched="1"] .slumps-indicators {
-  opacity: 1;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-.slumps-indicators {
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
 @-webkit-keyframes stretchdelay {
   0%,
   40%,
@@ -46,11 +30,11 @@
 }
 .slumps .loading {
   background: #222222;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, 255), color-stop(1, 255));
-  background: -ms-linear-gradient(bottom, 255, 255);
-  background: -moz-linear-gradient(center bottom, 255 0%, 255 100%);
-  background: -o-linear-gradient(255, 255);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='255', endColorstr='255', GradientType=0);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #000000), color-stop(1, #0a0a0a));
+  background: -ms-linear-gradient(bottom, #000000 0%, #0a0a0a 100%);
+  background: -moz-linear-gradient(center bottom, #000000 0%, #0a0a0a 100%);
+  background: -o-linear-gradient(#0a0a0a, #000000);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0a0a0a', endColorstr='#000000', GradientType=0);
   position: absolute;
   top: 0;
   height: 100%;
@@ -128,14 +112,19 @@
   margin: 1px;
   text-indent: -999px;
   cursor: pointer;
-  border: 1px solid #ffffff;
+  border: 1px solid #0d0d0d;
   border-radius: 10px;
 }
 .slumps-indicators li.active {
   width: 12px;
   height: 12px;
   margin: 0;
-  background-color: #ffffff;
+  background: #000000;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0d0d0d), color-stop(1, #1a1a1a));
+  background: -ms-linear-gradient(bottom, #0d0d0d, #1a1a1a);
+  background: -moz-linear-gradient(center bottom, #0d0d0d 0%, #1a1a1a 100%);
+  background: -o-linear-gradient(#1a1a1a, #0d0d0d);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a1a1a', endColorstr='#0d0d0d', GradientType=0);
 }
 .slumps .slumps-control {
   display: block;
@@ -143,11 +132,11 @@
   width: 10%;
   bottom: 0px;
 }
-.slumps .slumps-control[data-slumps="prev"] {
+.slumps .slumps-control.prev {
   left: 0px;
   right: auto;
 }
-.slumps .slumps-control[data-slumps="prev"] a {
+.slumps .slumps-control.prev a {
   float: left;
   padding: 20px 20px 20px 10px;
   -webkit-border-top-right-radius: 50px;
@@ -166,11 +155,25 @@
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-.slumps .slumps-control[data-slumps="next"] {
+@media only screen and (max-width: 767px) {
+  .slumps .slumps-control.prev a {
+    padding: 6px 6px 6px 3px;
+    font-size: 12px;
+    margin-top: -5px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .slumps .slumps-control.prev a {
+    padding: 12px 12px 12px 3px;
+    font-size: 12px;
+    margin-top: -5px;
+  }
+}
+.slumps .slumps-control.next {
   left: auto;
   right: 0px;
 }
-.slumps .slumps-control[data-slumps="next"] a {
+.slumps .slumps-control.next a {
   float: right;
   padding: 20px 10px 20px 20px;
   -webkit-border-top-right-radius: 0;
@@ -189,16 +192,36 @@
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
+@media only screen and (max-width: 767px) {
+  .slumps .slumps-control.next a {
+    padding: 6px 3px 6px 6px;
+    font-size: 12px;
+    margin-top: -5px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .slumps .slumps-control.next a {
+    padding: 12px 6px 12px 12px;
+    font-size: 13px;
+    margin-top: -5px;
+  }
+}
 .slumps .slumps-control a {
   text-decoration: none;
-  background: #ffffff;
-  color: #000000;
+  color: #454545;
   font-size: 16px;
   position: relative;
-  top: 50%;
+  top: 40%;
   margin-top: -20px;
-  margin-bottom: -20px;
   text-align: center;
+}
+.slumps .slumps-control a {
+  background: #000000;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0d0d0d), color-stop(1, #1a1a1a));
+  background: -ms-linear-gradient(bottom, #0d0d0d, #1a1a1a);
+  background: -moz-linear-gradient(center bottom, #0d0d0d 0%, #1a1a1a 100%);
+  background: -o-linear-gradient(#1a1a1a, #0d0d0d);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a1a1a', endColorstr='#0d0d0d', GradientType=0);
 }
 .slumps .slumps-control i.slumps-prev:before {
   font-family: 'slumpslider';
@@ -228,6 +251,48 @@
 .slumps .slumps-control {
   position: absolute;
   z-index: 15;
+}
+.slumps:hover .slumps-indicators li,
+.slumps:focus .slumps-indicators li,
+.slumps[data-slums-touched="1"] .slumps-indicators li,
+.slumps:hover .slumps-control a,
+.slumps:focus .slumps-control a,
+.slumps[data-slums-touched="1"] .slumps-control a {
+  opacity: 0.5;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.slumps-indicators li,
+.slumps .slumps-control a {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.slumps .slumps-control a:hover,
+.slumps .slumps-control a:focus {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.slumps .slumps-indicators > li:hover,
+.slumps .slumps-indicators > li:focus {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  background: #000000;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0d0d0d), color-stop(1, #1a1a1a));
+  background: -ms-linear-gradient(bottom, #0d0d0d, #1a1a1a);
+  background: -moz-linear-gradient(center bottom, #0d0d0d 0%, #1a1a1a 100%);
+  background: -o-linear-gradient(#1a1a1a, #0d0d0d);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a1a1a', endColorstr='#0d0d0d', GradientType=0);
 }
 /**
 Slumpslider Icon Font
