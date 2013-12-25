@@ -1,5 +1,6 @@
-throw new Error "Slumpslider requires jQuery" if !jQuery
 `"use strict"`
+
+throw new Error "Slumpslider requires jQuery" if !jQuery
 class Slumpslider 
 
   interval: undefined

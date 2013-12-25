@@ -4,13 +4,12 @@
 * http://www.apache.org/licenses/LICENSE-2.0
 */
 (function() {
+  "use strict";
   var Slumpslider;
 
   if (!jQuery) {
     throw new Error("Slumpslider requires jQuery");
   }
-
-  "use strict";
 
   Slumpslider = (function() {
     Slumpslider.prototype.interval = void 0;
