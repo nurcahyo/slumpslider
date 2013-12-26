@@ -39,18 +39,12 @@
     right: auto;
     a{
       float: left;
-      @media @phone {
-        padding: 6px 6px 6px 3px;
-        font-size: 12px;
-        margin-top: -5px;
-      }
-      @media @tablet {
-        padding: 12px 12px 12px 3px;
-        font-size: 12px;
-        margin-top: -5px;
-      }
-      padding: 20px 20px 20px 10px;
+      padding: 20px 5px 20px 0px;
       .border-radius(50px, 50px, 0, 0);
+      i{
+        padding: 15px 10px 15px 5px;
+        border-radius: 0px 50px 50px 0px;
+    }
     }
   }
   //next icon
@@ -59,18 +53,12 @@
     right: 0px;
     a{
       float: right;
-      @media @phone {
-        padding: 6px 3px 6px 6px;
-        font-size: 12px;
-        margin-top: -5px;
-      }
-      @media @tablet {
-        padding: 12px 6px 12px 12px;
-        font-size: 13px;
-        margin-top: -5px;
-      }
-      padding: 20px 10px 20px 20px;
+      padding: 20px 0px 20px 5px;
       .border-radius(0, 0, 50px, 50px);
+      i{
+        padding: 15px 5px 15px 10px;
+        border-radius: 50px 0px 0px 50px;
+      }
   }
 }
   a{
@@ -84,7 +72,7 @@
     text-align: center;
     &{
       .lightenOrDarken(@control-color,10%);
-      #gradient.gradient(@control-color,average(@control-color,@returnLightenOrDarken),@returnLightenOrDarken);
+      #gradient.gradient(@control-color,@returnLightenOrDarken,average(@control-color,@returnLightenOrDarken));
     }
   }
   i{
@@ -94,6 +82,8 @@
     &.slumps-next{
       .icon-right();
     }
+    .lightenOrDarken(@control-color,10%);
+    #gradient.gradient(@control-color,average(@control-color,@returnLightenOrDarken),@returnLightenOrDarken);
   }
 }
 

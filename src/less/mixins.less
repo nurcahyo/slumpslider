@@ -5,10 +5,13 @@
     More info at: http://lesselements.com
   ---------------------------------------------------*/
 
-
-// GRADIENTS
-// --------------------------------------------------
-
+// Dynamic variable
+.autoLightness(@color) when (lightness(@color) > 0 ){
+      @returnAutoLightness: lightness(@color);
+}
+.autoLightness(@color) when (lightness(@color) = 0 ){
+      @returnAutoLightness: 100;
+}
 
 .lightenOrDarken(@color,@percent) when(lightness(@color) < 50%){
   @returnLightenOrDarken: lighten(@color,@percent);
@@ -16,6 +19,11 @@
 .lightenOrDarken(@color,@percent) when(lightness(@color) >= 50%){
   @returnLightenOrDarken: darken(@color,@percent);
 }
+
+
+
+// GRADIENTS
+// --------------------------------------------------
 
 #gradient {
   
