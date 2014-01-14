@@ -1,4 +1,4 @@
-&-indicators{
+.slumps-indicators{
   bottom: 10px;
   left: 50%;
   width: 60%;
@@ -88,21 +88,23 @@
 }
 
 //** both control and indicator **//
-&-indicators, .slumps-control{
+.slumps-indicators, .slumps-control{
     position: absolute;
     z-index: @base-z-index+5;
 }
 //** HOVER INDICATORS EFFECT **//
 
 //on hover
-&:hover,&:focus, &[data-slums-touched="1"]{
-  & .slumps-indicators  li, .slumps-control a{
-    .hover(.5,0,@control-transition-in-time);
+.slumps{
+  &:hover,&:focus, &[data-slums-touched="1"]{
+    & .slumps-indicators  li, .slumps-control a{
+      .hover(.5,0,@control-transition-in-time);
+    }
   }
 }
 
 //on out hover
-&-indicators li, .slumps-control a{
+.slumps-indicators li, .slumps-control a{
   .hover(0,.5,@control-transition-out-time);
 }
 
@@ -117,8 +119,4 @@
     .lightenOrDarken(@control-color,10%);
      #gradient.gradient(@control-color,average(@control-color,@returnLightenOrDarken),@returnLightenOrDarken);
   }
-}
-
-&-inner{
-
 }
