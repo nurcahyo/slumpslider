@@ -110,12 +110,12 @@
 
 .slumps-control a{
   &:hover, &:focus{
-      .hover(1,0,@control-transition-in-time);
+      .hover(1,0,@control-transition-in-time)!important;
   }
 }
 .slumps-indicators > li{
   &:hover, &:focus{
-    .hover(1,0,@control-transition-in-time);
+    .hover(1,0,@control-transition-in-time)!important;
     .lightenOrDarken(@control-color,10%);
      #gradient.gradient(@control-color,average(@control-color,@returnLightenOrDarken),@returnLightenOrDarken);
   }
